@@ -4,12 +4,8 @@ plugins {
 }
 
 dependencies {
-    implementation project(':domain')
-
-    implementation dataDependencies.coroutinesCore
-
-    //Network
-    implementation dataDependencies.moshiConverter
+    implementation domainDependencies.kotlin
+    implementation domainDependencies.coroutinesCore
 }
 
 sourceCompatibility = JavaVersion.VERSION_1_8.toString()
@@ -17,5 +13,4 @@ targetCompatibility = JavaVersion.VERSION_1_8.toString()
 
 sourceSets {
     main.java.srcDirs += 'src/main/kotlin'
-    test.java.srcDirs += 'src/test/kotlin'
 }

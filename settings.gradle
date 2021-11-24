@@ -8,6 +8,5 @@ dependencyResolutionManagement {
 }
 rootProject.name = "BeerAppDemo"
 include ':app'
-include ':domain'
-include ':presentation'
 include ':data'
+include ':domain'
