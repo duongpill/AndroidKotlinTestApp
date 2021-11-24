@@ -1,8 +1,7 @@
 package com.duongnh.data.repository
 
-import com.duongnh.data.IRetrofitModule
+import com.duongnh.data.IRetrofitClient
 import com.duongnh.data.api.BeerService
-import com.duongnh.data.mappers.toDomain
 import com.duongnh.domain.models.BaseRequest
 import com.duongnh.domain.models.Beer
 import com.duongnh.domain.models.BeerRequest
@@ -11,16 +10,14 @@ import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 
 class GetBeersRepository(
-    private val retrofitModule: IRetrofitModule
+    private val retrofitClient: IRetrofitClient
 ): IGetBeersRepository {
     override suspend fun getBeers(params: BaseRequest): Flow<List<Beer>> = flow {
-        val beerService = retrofitModule.createService(BeerService::class.java)
+        val beerService = retrofitClient.createService(BeerService::class.java)
         val beers = mutableListOf<Beer>()
         if(params is BeerRequest) {
             val beersResponse = beerService.getBeers(params.page, params.perPage)
-            beersResponse.body()?.map {
-                beers.add(it.toDomain())
-            }
+            beersResponse.body()?.let { beers.addAll(it) }
         }
         emit(beers)
     }

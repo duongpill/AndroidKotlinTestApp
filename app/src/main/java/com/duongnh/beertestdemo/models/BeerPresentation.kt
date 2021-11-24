@@ -10,4 +10,4 @@ data class BeerPresentation(override val id: Int,
                             val firstBrewed: String,
                             val description: String,
                             val imageUrl: String,
-                            val abv: String): BaseObject()
+                            val abv: Float): BaseObject()

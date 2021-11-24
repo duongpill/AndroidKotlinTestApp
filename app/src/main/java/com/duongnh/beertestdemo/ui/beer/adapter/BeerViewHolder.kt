@@ -15,6 +15,7 @@ class BeerViewHolder(private val binding: BeerItemBinding): BaseViewHolder(bindi
             crossfade(true)
             placeholder(R.drawable.image_place_holder)
             transformations(CircleCropTransformation())
+            error(R.drawable.image_place_holder)
         }
     }
 }

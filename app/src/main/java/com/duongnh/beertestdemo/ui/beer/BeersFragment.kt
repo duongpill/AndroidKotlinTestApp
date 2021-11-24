@@ -19,7 +19,7 @@ import com.duongnh.beertestdemo.databinding.BeerFragmentBinding
 import com.duongnh.beertestdemo.models.BeerPresentation
 import com.duongnh.beertestdemo.ui.beer.adapter.BeerAdapter
 
-class BeersFragment() : BaseFragment() {
+class BeersFragment : BaseFragment() {
 
     //region Variables
     private var _binding: BeerFragmentBinding? = null

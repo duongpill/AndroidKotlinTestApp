@@ -85,6 +85,8 @@ ext {
             espressoContrib       : ("androidx.test.espresso:espresso-contrib:$espressoVersion"),
             espressoIdlingResource: "androidx.test.espresso:espresso-idling-resource:$espressoVersion",
             supportAnnotations    : "androidx.annotation:annotation:$supportVersion",
+            hiltAndroid           : "com.google.dagger:hilt-android-testing:$hiltVersion",
+            hiltAndroidKapt       : "com.google.dagger:hilt-android-compiler:$hiltVersion",
             robolectric           : "org.robolectric:robolectric:$robolectricVersion",
             mockitoCore           : "org.mockito:mockito-core:$mockitoCoreVersion",
             mockitoKotlin         : "com.nhaarman.mockitokotlin2:mockito-kotlin:$mockitoKotlinVersion",

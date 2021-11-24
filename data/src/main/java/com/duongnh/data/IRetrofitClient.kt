@@ -1,5 +1,5 @@
 package com.duongnh.data
 
-interface IRetrofitModule {
+interface IRetrofitClient {
     fun <S> createService(serviceClass: Class<S>): S
 }
