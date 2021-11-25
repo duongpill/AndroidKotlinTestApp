@@ -5,7 +5,8 @@ ext {
     versionCode = 1
     versionName = "1.0"
     compileSdkVersion = 31
-    testInstrumentationRunner = "android.support.test.runner.AndroidJUnitRunner"
+    testInstrumentationRunner = "com.duongnh.beertestdemo.CustomTestRunner"
+
     // Libraries
     swipeRefreshLayoutVersion = '1.1.0'
     coreKtxVersion = '1.7.0'
@@ -21,19 +22,24 @@ ext {
     lifecycleExtensionsVersion = '2.1.0'
     coilVersion = '1.4.0'
     okhttpLoggingVersion = '4.9.2'
-    junitVersion = '4.12'
-    mockitoVersion = '2.8.47'
     gsonVersion = '2.8.9'
     moshiVersion = '1.12.0'
     constraintLayoutVersion = '2.1.0'
     multidexVersion = '2.0.1'
+    navigationVersion = '2.3.5'
+    coroutinesVersion = '1.5.1'
+    coroutinesCoreVersion = '1.3.3'
+
+    // Unit Test
+    androidXJunitVersion = '1.1.4-alpha03'
+    assertjVersion = '3.19.0'
+    junitVersion = '4.12'
+    mockitoVersion = '2.8.47'
     supportTest = '1.1.0-alpha1'
     mockitoKotlinVersion = '2.0.0-RC1'
     robolectricVersion = '3.8'
     mockitoCoreVersion = '2.21.0'
-    navigationVersion = '2.3.5'
-    coroutinesVersion = '1.5.1'
-    coroutinesCoreVersion = '1.3.3'
+    archCoreVersion = '2.1.0'
 
     // App
     appDependencies = [
@@ -76,21 +82,24 @@ ext {
     ]
 
     appTestDependencies = [
-            kotlin                : "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlinVersion",
             junit                 : "junit:junit:$junitVersion",
-            mockito               : "org.mockito:mockito-core:$mockitoVersion",
-            testRunner            : "androidx.test:runner:$supportTest",
-            testRules             : "androidx.test:runner:$supportTest",
-            espressoCore          : "androidx.test.espresso:espresso-core:$espressoVersion",
-            espressoContrib       : ("androidx.test.espresso:espresso-contrib:$espressoVersion"),
-            espressoIdlingResource: "androidx.test.espresso:espresso-idling-resource:$espressoVersion",
-            supportAnnotations    : "androidx.annotation:annotation:$supportVersion",
             hiltAndroid           : "com.google.dagger:hilt-android-testing:$hiltVersion",
             hiltAndroidKapt       : "com.google.dagger:hilt-android-compiler:$hiltVersion",
+            androidXJunit         : "androidx.test.ext:junit-ktx:$androidXJunitVersion",
+            assertj               : "org.assertj:assertj-core:$assertjVersion",
+            espressoCore          : "androidx.test.espresso:espresso-core:$espressoVersion",
+            espressoContrib       : "androidx.test.espresso:espresso-contrib:$espressoVersion",
+            espressoIdlingResource: "androidx.test.espresso:espresso-idling-resource:$espressoVersion",
+            espressoIntents       : "androidx.test.espresso:espresso-intents:$espressoVersion",
+            kotlin                : "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlinVersion",
+            archCore              : "androidx.arch.core:core-testing:$archCoreVersion",
+            mockito               : "org.mockito:mockito-core:$mockitoVersion",
+            supportAnnotations    : "androidx.annotation:annotation:$supportVersion",
             robolectric           : "org.robolectric:robolectric:$robolectricVersion",
             mockitoCore           : "org.mockito:mockito-core:$mockitoCoreVersion",
             mockitoKotlin         : "com.nhaarman.mockitokotlin2:mockito-kotlin:$mockitoKotlinVersion",
             powermockModuleJunit4 : "org.powermock:powermock-module-junit4:$powermockVersion",
-            powermockApiMockito   : "org.powermock:powermock-api-mockito:$powermockVersion"
+            powermockApiMockito   : "org.powermock:powermock-api-mockito:$powermockVersion",
+            coroutines            : "org.jetbrains.kotlinx:kotlinx-coroutines-test:$coroutinesVersion",
     ]
 }

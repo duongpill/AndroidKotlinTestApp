@@ -3,7 +3,6 @@ package com.duongnh.beertestdemo.commons
 import android.util.Log
 
 class LoadMoreHandler(
-    private var totalItem: Int,
     private val totalItemInPage: Int,
     private val onScroll: (page: Int) -> Unit
 ) {
@@ -25,8 +24,7 @@ class LoadMoreHandler(
         }
     }
 
-    fun refresh(totalItem: Int, endPage: Boolean) {
-        this.totalItem =  totalItem
+    fun refresh(endPage: Boolean) {
         this.isLoadingData = false
         this.endPage = endPage
     }

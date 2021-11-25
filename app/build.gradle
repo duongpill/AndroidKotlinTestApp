@@ -41,6 +41,12 @@ android {
     buildFeatures {
         viewBinding = true
     }
+    hilt {
+        enableTransformForLocalTests = true
+    }
+    testOptions {
+        unitTests.returnDefaultValues = true
+    }
 }
 
 dependencies {
@@ -87,13 +93,28 @@ dependencies {
     implementation appDependencies.hiltNavigationFragment
     kapt appDependencies.hiltAndroidKapt
 
-    //
+    // Unit Test
     androidTestImplementation appTestDependencies.hiltAndroid
+    androidTestImplementation appTestDependencies.androidXJunit
+    androidTestImplementation appTestDependencies.assertj
+    androidTestImplementation appTestDependencies.espressoCore
+    androidTestImplementation appTestDependencies.espressoIntents
+
     kaptAndroidTest appTestDependencies.hiltAndroidKapt
 
+    testImplementation appTestDependencies.archCore
+    testImplementation appTestDependencies.mockito
+    testImplementation appTestDependencies.mockitoKotlin
+    testImplementation appTestDependencies.hiltAndroid
     testImplementation appTestDependencies.junit
-    androidTestImplementation appTestDependencies.espressoCore
+    testImplementation appTestDependencies.coroutines
 
+    kaptTest appTestDependencies.hiltAndroidKapt
+
+    implementation appTestDependencies.espressoIdlingResource
+    implementation appTestDependencies.espressoContrib
+
+    // Local Libs
     implementation project(':data')
     implementation project(':domain')
 }

@@ -33,7 +33,6 @@ class BeersFragment : BaseFragment() {
     private val totalItemInPage = 15
     private val loadMoreHandler: LoadMoreHandler by lazy {
         LoadMoreHandler(
-            totalItem = beerAdapter.size(),
             totalItemInPage = totalItemInPage,
             onScroll = { page -> viewModel.getBeers(page, totalItemInPage) })
     }
@@ -80,7 +79,7 @@ class BeersFragment : BaseFragment() {
             handleBeersLoading(state)
             state.beers?.let { beers ->
                 beerAdapter.add(beers){
-                    loadMoreHandler.refresh(totalItem = beerAdapter.size(), endPage = (beers.size < totalItemInPage))
+                    loadMoreHandler.refresh(endPage = (beers.size < totalItemInPage))
                 }
             }
             handleSearchError(state)

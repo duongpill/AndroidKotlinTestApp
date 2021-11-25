@@ -11,7 +11,9 @@ class BeerViewHolder(private val binding: BeerItemBinding): BaseViewHolder(bindi
     fun bind(beer: BeerPresentation?){
         binding.textName.text = beer?.name
         binding.textTagline.text = beer?.tagline
+        val size = binding.root.resources.getDimension(R.dimen.size_image_beer).toInt()
         binding.imgBeer.load(beer?.imageUrl){
+            size(size, size)
             crossfade(true)
             placeholder(R.drawable.image_place_holder)
             transformations(CircleCropTransformation())
