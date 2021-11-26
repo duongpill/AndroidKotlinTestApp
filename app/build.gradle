@@ -97,16 +97,14 @@ dependencies {
     implementation appDependencies.hiltNavigationFragment
     kapt appDependencies.hiltAndroidKapt
 
-    // Unit Test
+    //region Unit Test
     //Hilt
     androidTestImplementation appTestDependencies.hiltAndroid
     testImplementation appTestDependencies.hiltAndroid
     kaptAndroidTest appTestDependencies.hiltAndroidKapt
     kaptTest appTestDependencies.hiltAndroidKapt
 
-    testImplementation appTestDependencies.robolectric
-    testImplementation appTestDependencies.androidXJunit
-
+    //Navigation
     testImplementation appTestDependencies.navigation
     androidTestImplementation appTestDependencies.navigation
 
@@ -114,22 +112,21 @@ dependencies {
     debugImplementation 'androidx.fragment:fragment-testing:1.4.0'
     debugImplementation "androidx.test:core-ktx:1.4.0"
 
-//    androidTestImplementation appTestDependencies.androidXJunit
-//    androidTestImplementation appTestDependencies.assertj
-//    androidTestImplementation appTestDependencies.espressoCore
-//    androidTestImplementation appTestDependencies.espressoIntents
-
-
-//    testImplementation appTestDependencies.archCore
-//    testImplementation appTestDependencies.mockito
-//    testImplementation appTestDependencies.mockitoKotlin
-//    testImplementation appTestDependencies.mockitoKotlin2
-//    testImplementation appTestDependencies.junit
-//    testImplementation appTestDependencies.coroutines
-
-
+    //Espresso
     implementation appTestDependencies.espressoIdlingResource
     implementation appTestDependencies.espressoContrib
+
+    //Arch
+    testImplementation appTestDependencies.archCore
+    androidTestImplementation appTestDependencies.archCore
+
+    testImplementation appTestDependencies.robolectric
+    testImplementation appTestDependencies.androidXJunit
+
+    androidTestImplementation appTestDependencies.mockitoAndroid
+
+    androidTestImplementation appTestDependencies.testRule
+    //endregion
 
     // Local Libs
     implementation project(':data')

@@ -35,11 +35,13 @@ ext {
     assertjVersion = '3.19.0'
     junitVersion = '4.12'
     mockitoVersion = '4.0.0'
+    mockitoAndroidVersion = '4.0.0'
     supportTest = '1.1.0-alpha1'
     mockitoKotlinVersion = '2.0.0-RC1'
     robolectricVersion = '4.7.2'
     mockitoCoreVersion = '2.21.0'
     archCoreVersion = '2.1.0'
+    testRuleVersion = '1.4.0'
 
     // App
     appDependencies = [
@@ -94,13 +96,15 @@ ext {
             kotlin                : "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlinVersion",
             archCore              : "androidx.arch.core:core-testing:$archCoreVersion",
             mockito               : "org.mockito:mockito-core:$mockitoVersion",
-            mockitoKotlin2         : "com.nhaarman.mockitokotlin2:mockito-kotlin:$mockitoKotlinVersion",
+            mockitoKotlin2        : "com.nhaarman.mockitokotlin2:mockito-kotlin:$mockitoKotlinVersion",
             mockitoKotlin         : "org.mockito.kotlin:mockito-kotlin:$mockitoVersion",
+            mockitoAndroid        : "org.mockito:mockito-android:$mockitoAndroidVersion",
             supportAnnotations    : "androidx.annotation:annotation:$supportVersion",
             robolectric           : "org.robolectric:robolectric:$robolectricVersion",
             powermockModuleJunit4 : "org.powermock:powermock-module-junit4:$powermockVersion",
             powermockApiMockito   : "org.powermock:powermock-api-mockito:$powermockVersion",
             coroutines            : "org.jetbrains.kotlinx:kotlinx-coroutines-test:$coroutinesVersion",
-            navigation            : "androidx.navigation:navigation-testing:$navigationVersion"
+            navigation            : "androidx.navigation:navigation-testing:$navigationVersion",
+            testRule              : "androidx.test:rules:$testRuleVersion"
     ]
 }

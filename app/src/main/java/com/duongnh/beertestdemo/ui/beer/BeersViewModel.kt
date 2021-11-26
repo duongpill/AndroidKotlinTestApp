@@ -8,19 +8,17 @@ import com.duongnh.beertestdemo.mappers.toPresentation
 import com.duongnh.beertestdemo.models.BeerPresentation
 import com.duongnh.beertestdemo.models.Error
 import com.duongnh.domain.models.BeerRequest
-import com.duongnh.domain.usecases.GetBeersUseCase
+import com.duongnh.domain.usecases.IGetBeersUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.CoroutineExceptionHandler
-import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.flow.collect
-import kotlinx.coroutines.withContext
 import javax.inject.Inject
 
 
 @HiltViewModel
 class BeersViewModel @Inject constructor(
-    private val getBeersUseCase: GetBeersUseCase
+    private val getBeersUseCase: IGetBeersUseCase
 ): BaseViewModel() {
 
     //region Members
@@ -84,10 +82,8 @@ class BeersViewModel @Inject constructor(
     }
 
     private suspend fun loadBeers(page: Int, perPage: Int) {
-        getBeersUseCase(BeerRequest(page, perPage)).collect { res ->
-            val beers = res.map {
-                it.toPresentation()
-            }
+        getBeersUseCase(BeerRequest(page, perPage)).collect { response ->
+            val beers = response.map { it.toPresentation() }
             onBeersLoadingComplete(beers)
         }
     }

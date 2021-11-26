@@ -2,7 +2,7 @@ package com.duongnh.data.repository
 
 import com.duongnh.data.IRetrofitClient
 import com.duongnh.data.api.BeerService
-import com.duongnh.domain.models.BaseRequest
+import com.duongnh.domain.base.BaseRequest
 import com.duongnh.domain.models.Beer
 import com.duongnh.domain.models.BeerRequest
 import com.duongnh.domain.repository.IGetBeersRepository

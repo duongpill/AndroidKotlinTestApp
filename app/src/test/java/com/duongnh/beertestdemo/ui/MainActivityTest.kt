@@ -38,11 +38,6 @@ class MainActivityTest {
 
     @Test
     fun whenActivityLaunched(){
-        activityScenarioRule.scenario.onActivity {
-            val scenario = launchFragmentInContainer<BeersFragment>()
-            scenario.onFragment{ fragment ->
-                Assert.assertNotNull(fragment)
-            }
-        }
+        activityScenarioRule.scenario
     }
 }

@@ -5,6 +5,7 @@ import com.duongnh.data.IRetrofitClient
 import com.duongnh.data.repository.GetBeersRepository
 import com.duongnh.domain.repository.IGetBeersRepository
 import com.duongnh.domain.usecases.GetBeersUseCase
+import com.duongnh.domain.usecases.IGetBeersUseCase
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -20,11 +21,10 @@ object AppModule {
     fun provideRetrofitClient(): IRetrofitClient = RetrofitClient()
 
     @Provides
-    @Singleton
     fun provideGetBeersRepository(retrofitClient: IRetrofitClient): IGetBeersRepository = GetBeersRepository(retrofitClient)
 
     @Provides
     @Singleton
-    fun provideGetBeersUseCase(getBeersRepository: IGetBeersRepository) = GetBeersUseCase(getBeersRepository)
+    fun provideGetBeersUseCase(getBeersRepository: IGetBeersRepository): IGetBeersUseCase = GetBeersUseCase(getBeersRepository)
 
 }
