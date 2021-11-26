@@ -5,7 +5,7 @@ ext {
     versionCode = 1
     versionName = "1.0"
     compileSdkVersion = 31
-    testInstrumentationRunner = "com.duongnh.beertestdemo.CustomTestRunner"
+    testInstrumentationRunner = "com.duongnh.beertestdemo.HiltTestRunner"
 
     // Libraries
     swipeRefreshLayoutVersion = '1.1.0'
@@ -34,10 +34,10 @@ ext {
     androidXJunitVersion = '1.1.4-alpha03'
     assertjVersion = '3.19.0'
     junitVersion = '4.12'
-    mockitoVersion = '2.8.47'
+    mockitoVersion = '4.0.0'
     supportTest = '1.1.0-alpha1'
     mockitoKotlinVersion = '2.0.0-RC1'
-    robolectricVersion = '3.8'
+    robolectricVersion = '4.7.2'
     mockitoCoreVersion = '2.21.0'
     archCoreVersion = '2.1.0'
 
@@ -94,12 +94,13 @@ ext {
             kotlin                : "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlinVersion",
             archCore              : "androidx.arch.core:core-testing:$archCoreVersion",
             mockito               : "org.mockito:mockito-core:$mockitoVersion",
+            mockitoKotlin2         : "com.nhaarman.mockitokotlin2:mockito-kotlin:$mockitoKotlinVersion",
+            mockitoKotlin         : "org.mockito.kotlin:mockito-kotlin:$mockitoVersion",
             supportAnnotations    : "androidx.annotation:annotation:$supportVersion",
             robolectric           : "org.robolectric:robolectric:$robolectricVersion",
-            mockitoCore           : "org.mockito:mockito-core:$mockitoCoreVersion",
-            mockitoKotlin         : "com.nhaarman.mockitokotlin2:mockito-kotlin:$mockitoKotlinVersion",
             powermockModuleJunit4 : "org.powermock:powermock-module-junit4:$powermockVersion",
             powermockApiMockito   : "org.powermock:powermock-api-mockito:$powermockVersion",
             coroutines            : "org.jetbrains.kotlinx:kotlinx-coroutines-test:$coroutinesVersion",
+            navigation            : "androidx.navigation:navigation-testing:$navigationVersion"
     ]
 }

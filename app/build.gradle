@@ -23,11 +23,12 @@ android {
 
     buildTypes {
         release {
-            minifyEnabled false
+            minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
             buildConfigField('String', 'BASE_URL', '"https://api.punkapi.com/v2/"')
         }
         debug {
+            minifyEnabled false
             buildConfigField('String', 'BASE_URL', '"https://api.punkapi.com/v2/"')
         }
     }
@@ -46,6 +47,9 @@ android {
     }
     testOptions {
         unitTests.returnDefaultValues = true
+        unitTests {
+            includeAndroidResources = true
+        }
     }
 }
 
@@ -94,22 +98,35 @@ dependencies {
     kapt appDependencies.hiltAndroidKapt
 
     // Unit Test
+    //Hilt
     androidTestImplementation appTestDependencies.hiltAndroid
-    androidTestImplementation appTestDependencies.androidXJunit
-    androidTestImplementation appTestDependencies.assertj
-    androidTestImplementation appTestDependencies.espressoCore
-    androidTestImplementation appTestDependencies.espressoIntents
-
-    kaptAndroidTest appTestDependencies.hiltAndroidKapt
-
-    testImplementation appTestDependencies.archCore
-    testImplementation appTestDependencies.mockito
-    testImplementation appTestDependencies.mockitoKotlin
     testImplementation appTestDependencies.hiltAndroid
-    testImplementation appTestDependencies.junit
-    testImplementation appTestDependencies.coroutines
-
+    kaptAndroidTest appTestDependencies.hiltAndroidKapt
     kaptTest appTestDependencies.hiltAndroidKapt
+
+    testImplementation appTestDependencies.robolectric
+    testImplementation appTestDependencies.androidXJunit
+
+    testImplementation appTestDependencies.navigation
+    androidTestImplementation appTestDependencies.navigation
+
+    // Dependencies for Scenarios
+    debugImplementation 'androidx.fragment:fragment-testing:1.4.0'
+    debugImplementation "androidx.test:core-ktx:1.4.0"
+
+//    androidTestImplementation appTestDependencies.androidXJunit
+//    androidTestImplementation appTestDependencies.assertj
+//    androidTestImplementation appTestDependencies.espressoCore
+//    androidTestImplementation appTestDependencies.espressoIntents
+
+
+//    testImplementation appTestDependencies.archCore
+//    testImplementation appTestDependencies.mockito
+//    testImplementation appTestDependencies.mockitoKotlin
+//    testImplementation appTestDependencies.mockitoKotlin2
+//    testImplementation appTestDependencies.junit
+//    testImplementation appTestDependencies.coroutines
+
 
     implementation appTestDependencies.espressoIdlingResource
     implementation appTestDependencies.espressoContrib

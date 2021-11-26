@@ -1,6 +1,6 @@
 package com.duongnh.beertestdemo.di
 
-import com.duongnh.beertestdemo.network.RetrofitClient
+import com.duongnh.beertestdemo.FakeGetBeersRepository
 import com.duongnh.data.IRetrofitClient
 import com.duongnh.data.repository.GetBeersRepository
 import com.duongnh.domain.repository.IGetBeersRepository
@@ -13,18 +13,12 @@ import javax.inject.Singleton
 
 @Module
 @InstallIn(SingletonComponent::class)
-object AppModule {
+object AppModuleTest{
 
     @Provides
-    @Singleton
-    fun provideRetrofitClient(): IRetrofitClient = RetrofitClient()
+    fun provideGetBeersRepository(): IGetBeersRepository = FakeGetBeersRepository()
 
     @Provides
-    @Singleton
-    fun provideGetBeersRepository(retrofitClient: IRetrofitClient): IGetBeersRepository = GetBeersRepository(retrofitClient)
-
-    @Provides
-    @Singleton
     fun provideGetBeersUseCase(getBeersRepository: IGetBeersRepository) = GetBeersUseCase(getBeersRepository)
 
 }
