@@ -8,7 +8,7 @@
     <!--region Beer -->
     <fragment
         android:id="@+id/beerFragment"
-        android:name="com.duongnh.beertestdemo.ui.beer.BeersFragment"
+        android:name="com.duongnh.newtechnology2021demo.ui.beer.BeersFragment"
         android:label="HomeFragment"
         tools:layout="@layout/beer_fragment">
     </fragment>

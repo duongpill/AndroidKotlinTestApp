@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">BeerAppDemo</string>
+    <string name="app_name">NewTechnology2021Demo</string>
 
     <!-- Error Strings -->
     <string name="error_check_internet_connection">Check Internet Connection</string>
