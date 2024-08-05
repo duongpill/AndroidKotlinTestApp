@@ -4,14 +4,12 @@
 **MVVM**
 
 **Some main libs:**
-- Navigation
 - Retrofit
 - Coroutine
 - Coil
 - Hilt
 
 **Some unit test libs:**
-- Navigation
 - Espresso
 - Arch
 - Robolectric
