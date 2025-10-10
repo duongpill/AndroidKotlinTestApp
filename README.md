@@ -54,14 +54,18 @@ This app follows **Clean Architecture** and is divided into modules:
 
 ```mermaid
 flowchart LR
-  UI → VM[ViewModel]
-  VM → UC[UseCase]
-  UC → Repo[Repository Interface]
-  Repo → Impl[Repository Implementation]
-  Impl → RemoteAPI / LocalDB
-  LocalDB ↔ Impl
-  RemoteAPI ↔ Impl
-  Impl → Repo → UC → VM → UI
+  UI[UI] --> VM[ViewModel]
+  VM --> UC[UseCase]
+  UC --> RepoIF[Repository Interface]
+  RepoIF --> RepoImpl[Repository Implementation]
+  RepoImpl --> RemoteAPI[Remote API]
+  RepoImpl --> LocalDB[Local DB]
+  RemoteAPI --> RepoImpl
+  LocalDB --> RepoImpl
+  RepoImpl --> RepoIF
+  RepoIF --> UC
+  UC --> VM
+  VM --> UI
 ```
 
 ---
