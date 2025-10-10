@@ -16,9 +16,6 @@ This project contains modules (`app`, `data`, `domain`, `presentation`) and demo
 - [Configuration](#configuration)  
 - [Build & Run](#build--run)  
 - [Testing](#testing)  
-- [Screenshots / Demo](#screenshots--demo)  
-- [Contributing](#contributing)  
-- [License](#license)
 
 ---
 
