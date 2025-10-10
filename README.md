@@ -16,6 +16,9 @@ This project contains modules (`app`, `data`, `domain`, `presentation`) and demo
 - [Configuration](#configuration)  
 - [Build & Run](#build--run)  
 - [Testing](#testing)  
+- [Screenshots / Demo](#screenshots--demo)  
+- [Contributing](#contributing)  
+- [License](#license)
 
 ---
 
@@ -54,14 +57,14 @@ This app follows **Clean Architecture** and is divided into modules:
 
 ```mermaid
 flowchart LR
-  UI --> VM[ViewModel]
-  VM --> UC[UseCase]
-  UC --> Repo[Repository Interface]
-  Repo --> Impl[Repository Implementation]
-  Impl --> RemoteAPI / LocalDB
-  LocalDB <--> Impl
-  RemoteAPI <--> Impl
-  Impl --> Repo --> UC --> VM --> UI
+  UI → VM[ViewModel]
+  VM → UC[UseCase]
+  UC → Repo[Repository Interface]
+  Repo → Impl[Repository Implementation]
+  Impl → RemoteAPI / LocalDB
+  LocalDB ↔ Impl
+  RemoteAPI ↔ Impl
+  Impl → Repo → UC → VM → UI
 ```
 
 ---
